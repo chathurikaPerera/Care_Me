@@ -59,23 +59,55 @@ class _welcomeState extends State<welcome> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[900],
       body: Container(
         padding: EdgeInsets.only(top:100.0),
         child:  !isLog ? CircularProgressIndicator() : Column(
           children: <Widget>[
-            Center(
-              child: Text('welcome user'),
-            ),
-            RaisedButton(
-              child: Text(
-                'patient',
+
+            Container(
+              padding: EdgeInsets.only(top: 70.0),
+              height: 150.0,
+              //width: 300.0,
+              //color: Colors.lightBlue,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                // border: Border.all(
+                //   color: Colors.lightBlue,
+                //   width: 2,
+                // ),
+                //color: Colors.lightBlue,
+                image: DecorationImage(
+                  scale: 4,
+                  alignment: Alignment.bottomCenter,
+                  image: AssetImage(
+                    'assets/images/doctor2.png',
+                  ),
+                ),
               ),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return PatientHome();
-                }
-                ));
-              },
+
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 70.0),
+              height: 150.0,
+              //width: 300.0,
+              //color: Colors.lightBlue,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                // border: Border.all(
+                //   color: Colors.lightBlue,
+                //   width: 2,
+                // ),
+                //color: Colors.lightBlue,
+                image: DecorationImage(
+                  scale: 4,
+                  alignment: Alignment.bottomCenter,
+                  image: AssetImage(
+                    'assets/images/pp.png',
+                  ),
+                ),
+              ),
+
             ),
             RaisedButton(
               child: Text(
@@ -93,7 +125,7 @@ class _welcomeState extends State<welcome> {
                 }
                 ));
               },
-            )
+            ),
           ],
         ),
       ),
