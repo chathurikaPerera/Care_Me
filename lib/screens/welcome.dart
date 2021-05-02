@@ -66,7 +66,7 @@ class _welcomeState extends State<welcome> {
           children: <Widget>[
 
             Container(
-              padding: EdgeInsets.only(top: 70.0),
+              padding: EdgeInsets.only(top: 70.0,bottom: 30.0),
               height: 150.0,
               //width: 300.0,
               //color: Colors.lightBlue,
@@ -87,8 +87,20 @@ class _welcomeState extends State<welcome> {
               ),
 
             ),
+            TextButton(
+              child: Text(
+                'Doctor',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: (){
+                print('doctor');
+              },
+            ),
             Container(
-              padding: EdgeInsets.only(top: 70.0),
+              padding: EdgeInsets.only(top: 150.0),
               height: 150.0,
               //width: 300.0,
               //color: Colors.lightBlue,
@@ -107,7 +119,18 @@ class _welcomeState extends State<welcome> {
                   ),
                 ),
               ),
-
+            ),
+            TextButton(
+              child: Text(
+                'Patient',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: (){
+                print('patient');
+              },
             ),
             RaisedButton(
               child: Text(
@@ -115,17 +138,7 @@ class _welcomeState extends State<welcome> {
               ),
               onPressed: signOut,
             ),
-            RaisedButton(
-              child: Text(
-                'doctor',
-              ),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return DoctorHome();
-                }
-                ));
-              },
-            ),
+
           ],
         ),
       ),
