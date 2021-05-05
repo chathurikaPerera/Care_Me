@@ -72,17 +72,18 @@ class _welcomeState extends State<welcome> {
               //color: Colors.lightBlue,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                // border: Border.all(
-                //   color: Colors.lightBlue,
-                //   width: 2,
-                // ),
+                border: Border.all(
+                  color: Colors.lightBlue,
+                  width: 2,
+                ),
                 //color: Colors.lightBlue,
                 image: DecorationImage(
                   scale: 4,
                   alignment: Alignment.bottomCenter,
                   image: AssetImage(
-                    'assets/images/doctor2.png',
+                    'assets/images/nurse.png',
                   ),
+                  //fit: BoxFit.cover,
                 ),
               ),
 
@@ -97,6 +98,9 @@ class _welcomeState extends State<welcome> {
               ),
               onPressed: (){
                 print('doctor');
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return DoctorHome();
+                }));
               },
             ),
             Container(
@@ -130,6 +134,9 @@ class _welcomeState extends State<welcome> {
               ),
               onPressed: (){
                 print('patient');
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return PatientHome();
+                }));
               },
             ),
             RaisedButton(
