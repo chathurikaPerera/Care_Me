@@ -46,7 +46,7 @@ class Category extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
-                            color: Colors.lightBlue,
+                            color: Colors.indigo[900],
                           ),
                         ),
                       )

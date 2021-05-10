@@ -76,18 +76,24 @@ class Authentication with ChangeNotifier{
     }
   }
 
+  Future getUser() async{
+    CollectionReference user = FirebaseFirestore.instance.collection('users');
+    String uid = auth.currentUser.uid.toString();
+    String name, email;
+    try{
+      await user.doc(uid).get().then((value) {
+        name=value.data()['name'];
+        email=value.data()['email'];
+
+      });
+
+    }catch (e){
+      print(e.toString());
+    }
+  }
+
+
 
 
 }
 
-// Future<void> addUser(String displayName, String email) async{
-//   CollectionReference user = FirebaseFirestore.instance.collection('users');
-//   FirebaseAuth auth = FirebaseAuth.instance;
-//   String uid = auth.currentUser.uid.toString();
-//   user.add({
-//     "displayName" : displayName,
-//     "id" : uid,
-//     "email": email
-//   });
-//   return;
-// }

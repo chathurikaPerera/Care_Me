@@ -21,7 +21,8 @@ class _CategoriesState extends State<Categories> {
             color: Colors.white,
             letterSpacing: 3
           ),
-        )
+        ),
+
       ),
       //backgroundColor: Colors.indigo[900],
       body: SafeArea(
