@@ -40,22 +40,6 @@ class Button extends StatelessWidget {
           ),
         ),
       ),
-      // child: ClipRRect(
-      //   borderRadius: BorderRadius.circular(29),
-      //  child:FlatButton(
-      //     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-      //     color: color,
-      //     onPressed: press,
-      //     child: Text(
-      //       text,
-      //       style: TextStyle(
-      //         color: textColor,
-      //         fontWeight: FontWeight.bold,
-      //       ),
-      //     ),
-      //   ),
-      //
-      // )
     );
   }
 }

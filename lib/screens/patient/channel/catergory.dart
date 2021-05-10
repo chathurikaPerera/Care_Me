@@ -1,3 +1,4 @@
+import 'package:care_me/screens/patient/channel/doctors_list.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
@@ -9,7 +10,7 @@ class Category extends StatelessWidget {
   Category({
     Key key,
     this.name,
-    this.image
+    this.image,
   }):super(key: key);
 
   @override
@@ -26,7 +27,11 @@ class Category extends StatelessWidget {
               //child: Text('Entry ${names[index]}')
                 padding: EdgeInsets.all(20),
                 child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return DoctorList();
+                    }));
+                  },
 
                   child: Row(
                     children: <Widget>[
@@ -40,7 +45,7 @@ class Category extends StatelessWidget {
                             name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 17,
+                            fontSize: 15,
                             color: Colors.lightBlue,
                           ),
                         ),

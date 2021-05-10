@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:care_me/screens/doctor/doctorHome.dart';
 import 'package:care_me/screens/patient/patientHome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -34,11 +33,6 @@ class Authentication with ChangeNotifier{
   Future<void> addUser(String displayName, String email, String role) async{
   CollectionReference user = FirebaseFirestore.instance.collection('users');
   String uid = auth.currentUser.uid.toString();
-  // user.add({
-  //   "displayName" : displayName,
-  //   "id" : uid,
-  //   "email": email
-  // });
   try{
     await user.doc(uid).set({
       'displayName' : displayName,
@@ -50,13 +44,6 @@ class Authentication with ChangeNotifier{
   } catch(e){
     return e;
   }
-  // user.doc(uid).set({
-  //   'displayName' : displayName,
-  //   'email' : email,
-  //   'role' : role,
-  //   'id' : uid,
-  // });
-  // return;
 }
 
   Future<void> signIn({String email, String password}) async {
@@ -69,6 +56,23 @@ class Authentication with ChangeNotifier{
       print("log in successfully");
     } on FirebaseAuthException catch (e) {
       return e.message;
+    }
+  }
+
+  Future display() async{
+    CollectionReference doctor = FirebaseFirestore.instance.collection('doctors');
+    List itemList = [];
+    try{
+      await doctor.get().then((querySnapshot) {
+        querySnapshot.docs.forEach((element) {
+          itemList.add(element.data());
+        });
+      });
+      print(itemList[0]["name"]);
+      return itemList;
+
+    }catch (e){
+      print(e.toString());
     }
   }
 

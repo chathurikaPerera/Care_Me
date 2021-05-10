@@ -1,4 +1,5 @@
 import 'package:care_me/screens/background.dart';
+import 'package:care_me/screens/login/login.dart';
 import 'package:care_me/screens/patient/patientHome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -45,7 +46,11 @@ class _welcomeState extends State<welcome> {
   }
 
   signOut() async {
-    _auth.signOut();
+    _auth.signOut().then((value) =>
+    Navigator.pushReplacement(context, MaterialPageRoute(
+      builder: (BuildContext context) => LogIn()
+    ))
+    );
   }
 
 
