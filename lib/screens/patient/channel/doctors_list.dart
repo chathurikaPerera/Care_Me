@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 
 
 class DoctorList extends StatefulWidget {
+  final String doctor;
+
+  const DoctorList({Key key, this.doctor}) : super(key: key);
   @override
   _DoctorListState createState() => _DoctorListState();
 }
@@ -18,7 +21,8 @@ class _DoctorListState extends State<DoctorList> {
     fetchData();
   }
   fetchData() async{
-     dynamic result= await Authentication().display();
+
+     dynamic result= await Authentication().display(widget.doctor);
       if(result == null)
         {
           print("unable to load");
@@ -31,14 +35,25 @@ class _DoctorListState extends State<DoctorList> {
 
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+    print(widget.doctor);
 
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          'Physiology Specialist',
+          style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 3
+          ),
+        ),
 
       ),
       body: Container(
+        margin: EdgeInsets.all(15.0),
         // child: ListView.builder(
         //   //scrollDirection: Axis.horizontal,
         //   itemCount: doctorlist.length,
@@ -75,8 +90,8 @@ class _DoctorListState extends State<DoctorList> {
         //             ),
         child:GridView.builder(
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 200,
-                        childAspectRatio: 3 / 2,
+                        maxCrossAxisExtent: 300,
+                        childAspectRatio: 1.0,
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20
                       ),

@@ -59,11 +59,11 @@ class Authentication with ChangeNotifier{
     }
   }
 
-  Future display() async{
+  Future display(name) async{
     CollectionReference doctor = FirebaseFirestore.instance.collection('doctors');
     List itemList = [];
     try{
-      await doctor.get().then((querySnapshot) {
+      await doctor.where('specialist', isEqualTo: name).get().then((querySnapshot) {
         querySnapshot.docs.forEach((element) {
           itemList.add(element.data());
         });

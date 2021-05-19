@@ -24,22 +24,11 @@ class Background extends StatelessWidget {
                //      ),
                //    ),
                //  ),
+
                Container(
-                 padding: EdgeInsets.only(top: 100.0,bottom: 50),
-                 child: Center(
-                   child: Text(
-                     'WELCOME TO CAREME',
-                     style: TextStyle(
-                       fontSize: 25.0,
-                       fontWeight: FontWeight.bold,
-                       color: Colors.white,
-                     ),
-                   ),
-                 ),
-               ),
-               Container(
-                 padding: EdgeInsets.only(top: 70.0),
-                 height: 150.0,
+                 margin: EdgeInsets.only(top: 100.0, bottom: 10),
+
+                 height: 270.0,
                  //width: 300.0,
                  //color: Colors.lightBlue,
                  decoration: BoxDecoration(
@@ -53,16 +42,43 @@ class Background extends StatelessWidget {
                  ),
 
                  ),
+               Container(
+                 padding: EdgeInsets.only(top: 40.0,bottom: 15),
+                 child: Center(
+                   child: Text(
+                     'WELCOME TO CAREME',
+                     style: TextStyle(
+                       fontSize: 20.0,
+                       fontWeight: FontWeight.bold,
+                       color: Colors.white,
+                     ),
+                   ),
+                 ),
+               ),
+               Text(
+                 'Meet the best specialists',
+                 style: TextStyle(
+                     fontSize: 20.0,
+                   color: Colors.lightBlue
+                 ),
+               ),
+               Text(
+                 'around the Sri Lanka from your mobile',
+                 style: TextStyle(
+                     fontSize: 20.0,
+                     color: Colors.lightBlue
+                 ),
+               ),
                Padding(
-                 padding: const EdgeInsets.only(top: 100.0),
+                 padding: const EdgeInsets.only(top: 70.0),
                  child: Container(
                    //color: Colors.lightBlue,
                      //padding: EdgeInsets.only(top: 30.0),
                      child: Button(
-                       text: 'LOGIN',
+                       text: 'Get Start',
                        textColor: Colors.white,
-                       color: Colors.indigo[900],
-                       borderColor: Colors.white,
+                       color: Colors.lightBlue,
+                       borderColor: Colors.indigo,
                        press: (){
                          Navigator.push(context,
                            MaterialPageRoute(
@@ -77,24 +93,24 @@ class Background extends StatelessWidget {
                      )
                  ),
                ),
-               Container(
-                   //padding: EdgeInsets.all(5.0),
-                   child: Button(
-                     text: 'SIGN UP',
-                     textColor: Colors.indigo[900],
-                     color: Colors.white,
-                     borderColor: Colors.indigo[900],
-                     press: () {
-                       Navigator.push(context,
-                       MaterialPageRoute(
-                         builder: (context){
-                           return Signup();
-                         }
-                       ),
-                       );
-                     },
-                   )
-               )
+               // Container(
+               //     //padding: EdgeInsets.all(5.0),
+               //     child: Button(
+               //       text: 'SIGN UP',
+               //       textColor: Colors.indigo[900],
+               //       color: Colors.white,
+               //       borderColor: Colors.indigo[900],
+               //       press: () {
+               //         Navigator.push(context,
+               //         MaterialPageRoute(
+               //           builder: (context){
+               //             return Signup();
+               //           }
+               //         ),
+               //         );
+               //       },
+               //     )
+               // )
               ],
         ),
       ),

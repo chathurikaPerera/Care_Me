@@ -29,7 +29,7 @@ class Category extends StatelessWidget {
                 child: InkWell(
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return DoctorList();
+                      return DoctorList(doctor: name);
                     }));
                   },
 

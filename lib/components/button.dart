@@ -29,7 +29,7 @@ class Button extends StatelessWidget {
         color: color,
         onPressed: press,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(15),
           side: BorderSide(color: borderColor, width: 2)
         ),
         child: Text(
