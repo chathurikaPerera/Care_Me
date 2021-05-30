@@ -211,97 +211,107 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Form(
-            key: _formkey,
-            child: Container(
-              margin: const EdgeInsets.all(24.0),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 100.0),
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        color: Colors.indigo[900],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25.0,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 20.0),
-                    child: TextFormField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                          focusColor: Colors.indigo[900],
-                          labelText: 'Email',
-                          labelStyle: TextStyle(
-                              color: Colors.indigo[900]
+      backgroundColor: Color(0xFFCFE2F8),
+      body: Center(
+          child: Container(
+            decoration: BoxDecoration(color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(10.0)
+              )
+            ),
+            margin: EdgeInsets.all(25.0),
+            child: SingleChildScrollView(
+              child: Form(
+                  key: _formkey,
+                  child: Container(
+                    margin: const EdgeInsets.all(24.0),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.only(top: 40.0),
+                          child: Text(
+                            'LOGIN',
+                            style: TextStyle(
+                              color: Colors.indigo[900],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0,
+                            ),
                           ),
-                          icon: Icon(
-                            Icons.description,
-                            color: Colors.black,
-                          )
-                      ),
-                      cursorHeight: 25.0,
-                      validator: (value){
-                        if(value.isEmpty)
-                        {
-                          return 'Invalid Email';
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 20.0),
-                    child: TextFormField(
-                      obscureText: true,
-                      //controller: _passwordController,
-                      decoration: InputDecoration(
-                        focusColor: Colors.indigo[900],
-                        labelText: 'Password',
-                        labelStyle: TextStyle(
-                            color: Colors.indigo[900]
                         ),
-                        icon: Icon(
-                          Icons.vpn_key_sharp,
-                          color: Colors.black,
+                        Container(
+                          padding: EdgeInsets.only(top: 20.0),
+                          child: TextFormField(
+                            controller: _emailController,
+                            decoration: InputDecoration(
+                                focusColor: Colors.indigo[900],
+                                labelText: 'Email',
+                                labelStyle: TextStyle(
+                                    color: Colors.indigo[900]
+                                ),
+                                icon: Icon(
+                                  Icons.description,
+                                  color: Colors.black,
+                                )
+                            ),
+                            cursorHeight: 25.0,
+                            validator: (value){
+                              if(value.isEmpty)
+                              {
+                                return 'Invalid Email';
+                              }
+                              return null;
+                            },
+                          ),
                         ),
-                      ),
-                      cursorHeight: 25.0,
-                      validator: (value){
-                        if(value.isEmpty)
-                        {
-                          return 'Invalid Password';
-                        }
-                        return null;
-                      },
-                      controller: _passwordController ,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50.0,
-                    width: 200.0,
-                  ),
-                  Container(
-                    child: Button(
-                      text: 'Submit',
-                      textColor: Colors.white,
-                      color: Colors.indigo[900],
-                      borderColor: Colors.indigo[900],
-                      press: (){
-                        _submit();
-                      },
+                        Container(
+                          padding: EdgeInsets.only(top: 20.0),
+                          child: TextFormField(
+                            obscureText: true,
+                            //controller: _passwordController,
+                            decoration: InputDecoration(
+                              focusColor: Colors.indigo[900],
+                              labelText: 'Password',
+                              labelStyle: TextStyle(
+                                  color: Colors.indigo[900]
+                              ),
+                              icon: Icon(
+                                Icons.vpn_key_sharp,
+                                color: Colors.black,
+                              ),
+                            ),
+                            cursorHeight: 25.0,
+                            validator: (value){
+                              if(value.isEmpty)
+                              {
+                                return 'Invalid Password';
+                              }
+                              return null;
+                            },
+                            controller: _passwordController ,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50.0,
+                          width: 200.0,
+                        ),
+                        Container(
+                          child: Button(
+                            text: 'Submit',
+                            textColor: Colors.white,
+                            color: Color(0xFF44ACE7),
+                            borderColor: Color(0xFF44ACE7),
+                            press: (){
+                              _submit();
+                            },
+                          ),
+                        )
+                      ],
                     ),
                   )
-                ],
               ),
-            )
+            ),
+          ),
         ),
-      ),
-
     );
   }
 }

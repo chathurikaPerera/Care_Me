@@ -83,7 +83,7 @@ class Body extends StatelessWidget {
             height: 30,
             child: Container(
               //color: Colors.indigo,
-              padding: EdgeInsets.only(left: 30,top: 0),
+              padding: EdgeInsets.only(left: 30,top: 10),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Categories',
@@ -97,9 +97,8 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-
-                Container(
-                  margin: EdgeInsets.only(top: 0),
+          Container(
+                  margin: EdgeInsets.only(top: 10),
                   height: 150,
                   //color: Colors.yellowAccent,
                   //child: Expanded(
@@ -263,91 +262,93 @@ class Body extends StatelessWidget {
                       ],
                     ),
                 ),
-            Container(
-              height: MediaQuery.of(context).size.height/3 + 20,
-              width: MediaQuery.of(context).size.width,
-              alignment: Alignment.center,
-              //color: Colors.yellowAccent,
-              child: Stack(
-                children: <Widget>[
-                 Container(
-                   height: MediaQuery.of(context).size.height/3,
-                   width: MediaQuery.of(context).size.width,
-                     //padding: EdgeInsets.all(20),
-                   //alignment: Alignment.center,
-                   margin: EdgeInsets.only(top: 70,left: 15,right: 15),
-                   decoration: BoxDecoration(
-                     color: Colors.indigo[900],
-                     borderRadius: BorderRadius.only(
-                        bottomLeft: const Radius.circular(20),
-                        bottomRight: const Radius.circular(20),
-                        topLeft: const Radius.circular(20),
-                        topRight: const Radius.circular(20),
-                      ),
-                     ),
-                 ),
-                  Container(
-                    margin: EdgeInsets.only(left: 100, top: 0),
-                    child: Image.asset(
-                      'assets/images/well4.png',
-                      height: 350,
-                      alignment: Alignment.centerRight,
-                    ),
-                  ),
-                  Container(
-                         margin: EdgeInsets.only(top: 150, left:30),
-                         height: 300,
-                         child: Column(
-                           children: <Widget>[
-                           Text(
-                             'Treatment from the',
-                             style: TextStyle(
-                               color: Colors.lightBlue,
-                              letterSpacing: 2,
-                               fontSize: 15
-
-                             ),
-                           ),
-                             Text(
-                               'best specialist',
-                               style: TextStyle(
-                                   color: Colors.lightBlue,
-                                 letterSpacing: 2,
-                                 fontSize: 15,
-                               ),
-                             ),
-                             Text(
-                               'from around the',
-                               style: TextStyle(
-                                   color: Colors.white,
-                                 letterSpacing: 2,
-                                 fontSize: 15,
-                               ),
-                             ),
-                             Text(
-                               'sri lanka',
-                               style: TextStyle(
-                                   color: Colors.white,
-                                 letterSpacing: 2,
-                                 fontSize: 14
-                               ),
-                             ),
-
-                           ],
-                         ),
+          Expanded(
+            child: Container(
+                height: MediaQuery.of(context).size.height/3 ,
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.topCenter,
+                //color: Colors.yellowAccent,
+                child: Stack(
+                  children: <Widget>[
+                   Container(
+                     height: MediaQuery.of(context).size.height/4,
+                     width: MediaQuery.of(context).size.width,
+                       //padding: EdgeInsets.all(20),
+                     //alignment: Alignment.center,
+                     margin: EdgeInsets.only(top: 120,left: 15,right: 15),
+                     decoration: BoxDecoration(
+                       color: Colors.indigo[900],
+                       borderRadius: BorderRadius.only(
+                          bottomLeft: const Radius.circular(20),
+                          bottomRight: const Radius.circular(20),
+                          topLeft: const Radius.circular(20),
+                          topRight: const Radius.circular(20),
+                        ),
                        ),
+                   ),
+                    Container(
+                      margin: EdgeInsets.only(left: 100, top: 0),
+                      child: Image.asset(
+                        'assets/images/well4.png',
+                        height: 350,
+                        alignment: Alignment.centerRight,
+                      ),
+                    ),
+                    Container(
+                           margin: EdgeInsets.only(top: 220, left:30),
+                           height: 300,
+                           child: Column(
+                             children: <Widget>[
+                             Text(
+                               'Treatment from the',
+                               style: TextStyle(
+                                 color: Colors.lightBlue,
+                                letterSpacing: 2,
+                                 fontSize: 15
 
-                       // Container(
-                       //   margin: EdgeInsets.only(left: 30, top: 70),
-                       //    alignment: Alignment.center,
-                       //    width: 90,
-                       //    child: Text(
-                       //       'Treatment from the best specialists from the Sri Lanka',
-                       //    ),
-                       // ),
-                  ],
-                ),
-            ),
+                               ),
+                             ),
+                               Text(
+                                 'best specialist',
+                                 style: TextStyle(
+                                     color: Colors.lightBlue,
+                                   letterSpacing: 2,
+                                   fontSize: 15,
+                                 ),
+                               ),
+                               Text(
+                                 'from around the',
+                                 style: TextStyle(
+                                     color: Colors.white,
+                                   letterSpacing: 2,
+                                   fontSize: 15,
+                                 ),
+                               ),
+                               Text(
+                                 'sri lanka',
+                                 style: TextStyle(
+                                     color: Colors.white,
+                                   letterSpacing: 2,
+                                   fontSize: 14
+                                 ),
+                               ),
+
+                             ],
+                           ),
+                         ),
+
+                         // Container(
+                         //   margin: EdgeInsets.only(left: 30, top: 70),
+                         //    alignment: Alignment.center,
+                         //    width: 90,
+                         //    child: Text(
+                         //       'Treatment from the best specialists from the Sri Lanka',
+                         //    ),
+                         // ),
+                    ],
+                  ),
+              ),
+          ),
                 ],
               ),
     );

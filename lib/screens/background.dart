@@ -4,13 +4,14 @@ import 'package:care_me/screens/signup/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[900],
+      backgroundColor: Colors.white,//Color(0xFFCFE2F8),
       body: Container(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -27,19 +28,8 @@ class Background extends StatelessWidget {
 
                Container(
                  margin: EdgeInsets.only(top: 100.0, bottom: 10),
-
                  height: 270.0,
-                 //width: 300.0,
-                 //color: Colors.lightBlue,
-                 decoration: BoxDecoration(
-                   //color: Colors.lightBlue,
-                   image: DecorationImage(
-                     alignment: Alignment.bottomCenter,
-                     image: AssetImage(
-                         'assets/images/new2.png',
-                     ),
-                   ),
-                 ),
+                 child: SvgPicture.asset('assets/images/health.svg'),
 
                  ),
                Container(
@@ -50,7 +40,7 @@ class Background extends StatelessWidget {
                      style: TextStyle(
                        fontSize: 20.0,
                        fontWeight: FontWeight.bold,
-                       color: Colors.white,
+                       color: Colors.black,
                      ),
                    ),
                  ),
@@ -59,14 +49,14 @@ class Background extends StatelessWidget {
                  'Meet the best specialists',
                  style: TextStyle(
                      fontSize: 20.0,
-                   color: Colors.lightBlue
+                   color: Colors.black
                  ),
                ),
                Text(
                  'around the Sri Lanka from your mobile',
                  style: TextStyle(
                      fontSize: 20.0,
-                     color: Colors.lightBlue
+                     color: Colors.black
                  ),
                ),
                Padding(
@@ -77,8 +67,8 @@ class Background extends StatelessWidget {
                      child: Button(
                        text: 'Get Start',
                        textColor: Colors.white,
-                       color: Colors.lightBlue,
-                       borderColor: Colors.indigo,
+                       color: Color(0xFF44ACE7),
+                       borderColor: Color(0xFF44ACE7),
                        press: (){
                          Navigator.push(context,
                            MaterialPageRoute(
@@ -93,24 +83,7 @@ class Background extends StatelessWidget {
                      )
                  ),
                ),
-               // Container(
-               //     //padding: EdgeInsets.all(5.0),
-               //     child: Button(
-               //       text: 'SIGN UP',
-               //       textColor: Colors.indigo[900],
-               //       color: Colors.white,
-               //       borderColor: Colors.indigo[900],
-               //       press: () {
-               //         Navigator.push(context,
-               //         MaterialPageRoute(
-               //           builder: (context){
-               //             return Signup();
-               //           }
-               //         ),
-               //         );
-               //       },
-               //     )
-               // )
+
               ],
         ),
       ),
