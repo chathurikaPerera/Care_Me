@@ -27,8 +27,8 @@ class _SignupState extends State<Signup> {
 
   Future<bool> _submit() async{
    try {
-     print(_name.text);
-     print(_email.text);
+     //print(_name.text);
+     //print(_email.text);
      //await Firebase.initializeApp();
      UserCredential user = await FirebaseAuth.instance
          .createUserWithEmailAndPassword(
@@ -37,11 +37,6 @@ class _SignupState extends State<Signup> {
      );
      if(FirebaseAuth.instance.currentUser != null)
        {
-         // Provider.of<Authentication>(context, listen: false).addUser(
-         //   _name.text.trim(),
-         //   _email.text.trim(),
-         //   _userRole.trim(),
-         // );
          CollectionReference user = FirebaseFirestore.instance.collection('users');
          String uid = auth.currentUser.uid.toString();
          // user.add({

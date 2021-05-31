@@ -1,3 +1,4 @@
+import 'package:care_me/components/button.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentForm extends StatefulWidget {
@@ -6,11 +7,30 @@ class AppointmentForm extends StatefulWidget {
 }
 
 class _AppointmentFormState extends State<AppointmentForm> {
+
+  String _time;
+  final GlobalKey<FormState> _formkey = GlobalKey();
+  TextEditingController _name = new TextEditingController();
+  TextEditingController _drname = new TextEditingController();
+  TextEditingController _date = new TextEditingController();
+  //TextEditingController _time = new TextEditingController();
+  TextEditingController _mobile = new TextEditingController();
+
+  Future<bool> _submit() async {
+    print(_name.text);
+    print(_drname.text);
+    print(_date.text);
+    print(_time);
+    print(_mobile.text);
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
         child: Form(
-          //key: _formkey,
+          key: _formkey,
           child:Container(
             margin: const EdgeInsets.all(24.0),
             child: Column(
@@ -20,6 +40,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                   alignment: Alignment.centerLeft,
                   height: 60.0,
                   decoration: BoxDecoration(
+                    color: Color(0xFFCFE2F8),
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       color: Colors.lightBlue,
@@ -29,7 +50,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      //controller: _name,
+                      controller: _name,
                       decoration: InputDecoration(
                         //focusColor: Colors.white,
                         border: InputBorder.none,
@@ -52,9 +73,43 @@ class _AppointmentFormState extends State<AppointmentForm> {
                 ),
                 SizedBox(height: 15.0,),
                 Container(
+                  alignment: Alignment.centerLeft,
                   height: 60.0,
                   decoration: BoxDecoration(
-                    //border: Border.all(color: Colors.indigo),
+                    color: Color(0xFFCFE2F8),
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(
+                      color: Colors.lightBlue,
+                    ),
+                  ),
+                  //padding: EdgeInsets.only(top: 20.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: _drname,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Dr Name',
+                        hintStyle: TextStyle(
+                          color: Colors.indigo,
+                        ),
+                      ),
+                      cursorHeight: 25.0,
+                      validator: (value){
+                        if(value.isEmpty)
+                        {
+                          return 'Invalid Name';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15.0,),
+                Container(
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFCFE2F8),
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       color: Colors.lightBlue,
@@ -64,6 +119,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: _date,
                       decoration: InputDecoration(
                         //focusColor: Colors.indigo[900],
                         hintText: 'Date',
@@ -76,7 +132,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                       validator: (value){
                         if(value.isEmpty)
                         {
-                          return 'Invalid Email';
+                          return 'Please select Date';
                         }
                         return null;
                       },
@@ -88,6 +144,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                 Container(
                   height: 60.0,
                   decoration: BoxDecoration(
+                    color: Color(0xFFCFE2F8),
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       color: Colors.lightBlue,
@@ -117,7 +174,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
 
                         ],
                         onChanged: (value) {
-                          //_userRole = value;
+                          _time= value;
                         }
 
                     ),
@@ -127,6 +184,7 @@ class _AppointmentFormState extends State<AppointmentForm> {
                 Container(
                   height: 60.0,
                   decoration: BoxDecoration(
+                    color: Color(0xFFCFE2F8),
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       color: Colors.lightBlue,
@@ -136,9 +194,10 @@ class _AppointmentFormState extends State<AppointmentForm> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: _mobile,
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Password',
+                        hintText: 'Mobile Number',
                         hintStyle: TextStyle(
                           color: Colors.indigo,
                         ),
@@ -155,6 +214,17 @@ class _AppointmentFormState extends State<AppointmentForm> {
                   ),
                 ),
                 SizedBox(height: 15.0,),
+                Container(
+                  child: Button(
+                    text: 'SUBMIT',
+                    textColor: Colors.white,
+                    color: Color(0xFF44ACE7),
+                    borderColor: Color(0xFF44ACE7),
+                    press: (){
+                      _submit();
+                    },
+                  ),
+                )
               ],
             ),
           ),

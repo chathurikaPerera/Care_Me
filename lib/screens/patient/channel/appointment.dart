@@ -20,18 +20,17 @@ class _AppointmentsState extends State<Appointments> {
         child: Stack(
           children: [
             Align(
-              alignment: Alignment.bottomRight,
+              alignment: Alignment.bottomCenter,
               child: Container(
                 height: MediaQuery.of(context).size.height/2,
                 width: MediaQuery.of(context).size.width,
-                child: SvgPicture.asset('assets/images/bbbb.svg'),
-
+                child: SvgPicture.asset(
+                    'assets/images/bbbb.svg'),
               ),
             ),
             Column(
               children: [
              Container(
-                child: Container(
                   child: SafeArea(
                     child:Column(
                       children: [
@@ -65,31 +64,21 @@ class _AppointmentsState extends State<Appointments> {
                       ],
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,//AppointmentForm(),
-                ),
               ),
             ],
           ),
             Center(
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.transparent,
+                    //color: Colors.yellowAccent,
                 ),
-                margin: EdgeInsets.only(top: 10, bottom: 100, left: 18, right: 18),
-                child: Expanded(
+                margin: EdgeInsets.only( bottom: 100, left: 18, right: 18),
+
                   child: SingleChildScrollView(
                     child: AppointmentForm(),
                   ),
                 ),
               ),
-            )
           ],
         ),
       ),
